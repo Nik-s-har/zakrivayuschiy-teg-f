@@ -41,12 +41,10 @@
 
 .header__logo {
   font-size: clamp(3.0625rem, 1.5023vw + 2.7104rem, 4.0625rem);
- /* line-height: 2em; */
 }
 
 .header__title {
   font-size: clamp(.875rem, .8451vw + .6769rem, 1.4375rem);
-  /* line-height: 1em; */
 }
 
 .content {
@@ -112,24 +110,25 @@
 }
 
 .card__content-footer {
-  display: flex;
-  justify-content: end;
-  align-items: end;
+  justify-self: end;
+  padding-block-start: 1px;
 }
 
 .card__icon-button {
-  inline-size: 39px;
-  aspect-ratio: 1 / 1;
-  padding-top: 9px;
+  padding: 0;
+  line-height: 0;
+  border: none;
+  outline: none;
+  background-color: #fff;
+  vertical-align: middle;
 }
 
 .like-icon {
-  
+  inline-size: 39px;
 }
 
 .card__like-button {
   inline-size: 130px;
-  /* block-size: 38px; */
   background-color: #fff;
 }
 
@@ -140,19 +139,22 @@
 }
 
 .save-button {
-  inline-size: 335px;
+  display: block;
+  inline-size: 339px;
   background-color: #fff;
   border: 2px solid #000;
   margin-block: 50px 100px;
   margin-inline: auto;
-  padding: 10px 0 10px 19px;
+  padding: 13px 0 11px 4px;
 }
 
 .save-button__icon {
+  display: inline-block;
+  vertical-align: middle;
   border: none;
   background-color: transparent;
   line-height: 0;
-  padding: 0;
+  padding: 0 3px 0 0;
 }
 
 .save-button__icon svg {
@@ -162,9 +164,48 @@
 
 .save-button__title {
   display: inline-block;
+  vertical-align: middle;
   font-family: var(--accented-font);
   font-size: 14px;
   font-weight: 400;
 }
 
+.save-dialog[open] {
+  display: grid;
+  grid-template-columns: 39px 234px;
+  grid-template-rows: min-content min-content;
+  grid-template-areas: 
+    "floppy text"
+    "button button";
+  row-gap: 20px;
+  column-gap: 30px; 
+  padding: 30px;
+}
+
+/*.save-dialog:not([open]) {
+  pointer-events: none;
+  opacity: 0;
+} */
+
+.save-dialog__floppy {
+  grid-area: floppy;
+}
+
+.save-dialog__text {
+  grid-area: text;
+}
+
+.save-dialog__button {
+  grid-area: button;
+}
+
+@media (width <= 375px) {
+  .header {
+    inline-size: 100%;
+  }
+
+  .content {
+    inline-size: 100%;
+  }  
+}
 
