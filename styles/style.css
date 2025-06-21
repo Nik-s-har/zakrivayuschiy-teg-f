@@ -47,6 +47,8 @@
   font-size: clamp(.875rem, .8451vw + .6769rem, 1.4375rem);
 }
 
+/*Основной блок с карточками*/
+
 .content {
   display: grid;
   gap: 50px;
@@ -111,50 +113,101 @@
 
 .card__content-footer {
   justify-self: end;
-  padding-block-start: 1px;
+  align-items: start;
 }
 
 .card__icon-button {
-  padding: 0;
   line-height: 0;
-  border: none;
-  outline: none;
+  border: 2px solid #fff;
   background-color: #fff;
-  vertical-align: middle;
+  vertical-align: top; 
+  outline: none;
+  inline-size: 38px;
+  aspect-ratio: 1 /1;
+  padding-inline: 2px;
+  padding-block-start: 7px;
+  padding-block-end: 3px;
+  transition: border 0.3s ease;
 }
 
-.like-icon {
-  inline-size: 39px;
+.card__icon-button:focus-visible {
+  border: 2px solid #000;
+}
+
+.card__icon-button:focus {
+  outline: none;
+}
+
+.card__icon-button svg {
+  inline-size: 27px;
+  max-block-size: 24px;
 }
 
 .card__like-button {
   inline-size: 130px;
-  background-color: #fff;
+  padding-block-start: 3px;
+  padding-block-end: 2px;
+  line-height: 29px;
 }
 
 .button__text {
   font-family: var(--accented-font);
   font-size: 14px;
-  line-height: 2rem;
+  /*line-height: 2rem; */
+  mix-blend-mode: difference;
 }
 
-.save-button {
-  display: block;
-  inline-size: 339px;
+/*Стилизуем эффекты фокуса и ховера общие для кнопок*/
+
+.button-effect {
+  position: relative;
+  transition: box-shadow 0.3s ease;
+  overflow: hidden;
+  color: #fff;
   background-color: #fff;
+}
+
+.button-effect:focus {
+  outline: none;
+  box-shadow: 2px 2px #000;
+}
+
+.button-effect::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  transition: transform 0.5s ease-in-out;
+  background-color: #000;
+}
+
+.button-effect:hover::before {
+  transform: translateX(0);
+}
+
+/*Стилизация кнопки сохранения и диалогового окна*/
+
+.save-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  inline-size: fit-content;
   border: 2px solid #000;
   margin-block: 50px 100px;
   margin-inline: auto;
-  padding: 13px 0 11px 4px;
+  padding: 15px 19px;
 }
+
 
 .save-button__icon {
   display: inline-block;
-  vertical-align: middle;
+  /*vertical-align: middle; */
   border: none;
   background-color: transparent;
-  line-height: 0;
-  padding: 0 3px 0 0;
+  mix-blend-mode: difference;
+  /*line-height: 0;
+  /* padding: 0 3px 0 0; */
 }
 
 .save-button__icon svg {
@@ -164,10 +217,11 @@
 
 .save-button__title {
   display: inline-block;
-  vertical-align: middle;
+  /*vertical-align: middle; */
   font-family: var(--accented-font);
   font-size: 14px;
   font-weight: 400;
+  mix-blend-mode: difference;
 }
 
 .save-dialog[open] {
@@ -199,13 +253,31 @@
   grid-area: button;
 }
 
+/*Медиавыражения для адаптации под мобильную версию*/
+
 @media (width <= 375px) {
   .header {
     inline-size: 100%;
   }
 
+  .header__logo {
+    font-size: 45px;
+  }
+
   .content {
     inline-size: 100%;
-  }  
+  } 
+  
+  .save-button {
+    flex-direction: column;
+  }
+
+  .save-button__icon svg {
+    inline-size: 28px;
+  }
+
+  .save-dialog[open] {
+    grid-template-columns: 39px 198px;
+  }
 }
 
