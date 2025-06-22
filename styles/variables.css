@@ -4,4 +4,8 @@
   --accented-font: "Press Start 2P";
   --base-font: "Inter-Variable";
   --width: clamp(23.4375rem, 30.5164vw + 16.2852rem, 43.75rem);
+  --heart-contour-color: #000;
+  --heart-main-body-color: transparent;
+  --heart-core-color: transparent;
+  --heart-sparks-color: red;
 }

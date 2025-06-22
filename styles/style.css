@@ -118,15 +118,12 @@
 
 .card__icon-button {
   line-height: 0;
-  border: 2px solid #fff;
+  border: 1px solid transparent;
   background-color: #fff;
   vertical-align: top; 
-  outline: none;
-  inline-size: 38px;
-  aspect-ratio: 1 /1;
-  padding-inline: 2px;
-  padding-block-start: 7px;
-  padding-block-end: 3px;
+  max-inline-size: 41px;
+  max-block-size: 38px;
+  padding: 0;
   transition: border 0.3s ease;
 }
 
@@ -136,12 +133,107 @@
 
 .card__icon-button:focus {
   outline: none;
-}
+} 
 
 .card__icon-button svg {
-  inline-size: 27px;
-  max-block-size: 24px;
+  inline-size: 38px;
+  block-size: 36px;
 }
+
+/*Стилизуем иконку сердца*/
+
+.sparks {
+  opacity: 0;
+}
+
+.main-body {
+  transition: fill 0.3s; 
+}
+
+.core {
+  transition: fill 0.3s 0.03s;
+}
+
+.contour {
+  transition: fill 0.1s;
+}
+
+.like-icon:hover .main-body {
+  transition: fill 0.3s 0.05s;
+}
+
+.like-icon:hover .core {
+  transition: fill 0.3s;
+}
+
+.like-icon:hover {
+  --heart-main-body-color: #000;
+  --heart-core-color: #000;
+}
+
+.like-icon:active .main-body {
+  transition: fill 0.3s 0.05s;
+}
+
+.like-icon:active .core {
+  transition: fill 0.3s;
+}
+
+.like-icon:active {
+  --heart-main-body-color: red;
+  --heart-core-color: red;
+}
+
+/*Стилизуем анимацию is-liked*/
+
+.like-icon.is-liked .core {
+  transition: fill 0.3s;
+}
+
+.like-icon.is-liked .main-body {
+  transition: fill 0.3s 0.05s;
+}
+
+.like-icon.is-liked .contour {
+  transition: fill 0.3s 0.06s;
+}
+
+.like-icon.is-liked {
+  --heart-main-body-color: red;
+  --heart-core-color: red;
+  --heart-contour-color: red;
+}
+
+@keyframes heart-scale {
+  from {
+    transform: scale(1);
+  }
+  
+  to {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes heart-sparks {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.like-icon.is-liked .heart {
+  transform-origin: center;
+  animation: heart-scale 0.3s ease-in 0.06s;
+}
+
+.like-icon.is-liked .sparks {
+  animation: heart-sparks 0.3s ease-in 0.3s;
+}
+
+/*Стилизуем кнопку Like*/
 
 .card__like-button {
   inline-size: 130px;
@@ -153,7 +245,6 @@
 .button__text {
   font-family: var(--accented-font);
   font-size: 14px;
-  /*line-height: 2rem; */
   mix-blend-mode: difference;
 }
 
@@ -199,15 +290,11 @@
   padding: 15px 19px;
 }
 
-
 .save-button__icon {
   display: inline-block;
-  /*vertical-align: middle; */
   border: none;
   background-color: transparent;
   mix-blend-mode: difference;
-  /*line-height: 0;
-  /* padding: 0 3px 0 0; */
 }
 
 .save-button__icon svg {
@@ -217,7 +304,6 @@
 
 .save-button__title {
   display: inline-block;
-  /*vertical-align: middle; */
   font-family: var(--accented-font);
   font-size: 14px;
   font-weight: 400;
@@ -236,10 +322,9 @@
   padding: 30px;
 }
 
-/*.save-dialog:not([open]) {
-  pointer-events: none;
-  opacity: 0;
-} */
+.save-dialog::backdrop {
+  background: rgba(0, 0, 0, 0.75);
+}
 
 .save-dialog__floppy {
   grid-area: floppy;
@@ -256,18 +341,12 @@
 /*Медиавыражения для адаптации под мобильную версию*/
 
 @media (width <= 375px) {
-  .header {
-    inline-size: 100%;
-  }
+  --width: 100%;
 
   .header__logo {
-    font-size: 45px;
+    font-size: clamp(2.8125rem, 7.2727vw + 1.358rem, 3.0625rem);
   }
 
-  .content {
-    inline-size: 100%;
-  } 
-  
   .save-button {
     flex-direction: column;
   }
