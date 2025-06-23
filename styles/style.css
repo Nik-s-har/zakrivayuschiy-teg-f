@@ -176,6 +176,7 @@
   transition: border 0.3s ease;
   max-inline-size: 41px;
   max-block-size: 38px;
+  cursor: pointer;
 }
 
 .card__icon-button:focus-visible {
@@ -291,6 +292,7 @@
   padding-block: 3px;
   line-height: 29px;
   inline-size: 130px;
+  cursor: pointer;
 }
 
 .button__text {
