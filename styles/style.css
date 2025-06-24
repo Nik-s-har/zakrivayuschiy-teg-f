@@ -117,8 +117,8 @@
   filter: contrast(10%);
 }
 
-.filter-invert {
-  filter: invert(0.9);
+.filter-opacity-invert {
+  filter: opacity(0.7) invert(0.9);
 }
 
 .image-lable {
@@ -174,9 +174,9 @@
   line-height: 0;
   background-color: #fff;
   transition: border 0.3s ease;
+  cursor: pointer;
   max-inline-size: 41px;
   max-block-size: 38px;
-  cursor: pointer;
 }
 
 .card__icon-button:focus-visible {
@@ -198,8 +198,8 @@
   margin-inline-start: 2px;
   padding-block: 3px;
   line-height: 29px;
-  inline-size: 130px;
   cursor: pointer;
+  inline-size: 130px;
 }
 
 .button__text {
@@ -276,8 +276,8 @@
   align-items: center;
   row-gap: 30px;
   column-gap: 20px;
-  padding: 29px;
   border: 2px solid #000;
+  padding: 29px;
   font-family: var(--accented-font, fantasy);
   font-size: 14px;
   line-height: 150%;
