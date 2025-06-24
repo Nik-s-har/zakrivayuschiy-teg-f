@@ -25,7 +25,7 @@
         </h2>
         <div class="card__image-container">
           <img
-            class="card__image preparation"
+            class="card__image filter-blur"
             src="./images/Start.png"
             alt="Мужчина стоит у подножья горы, его взгляд устремлен вдаль. 
           Перед собой он видит высокую гору, чья вершина скрыта в облаках, но подъем достаточно пологий, чтобы преодолеть его без особых трудностей"
@@ -53,6 +53,7 @@
                 height="36"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <g class="heart">
                   <path
@@ -86,9 +87,9 @@
       </article>
       <article class="card">
         <h2 class="card__title">1 спринт: Я — чистый лист</h2>
-        <div class="card__image-container clean-slate">
+        <div class="card__image-container bg-green">
           <img
-            class="card__image first-sprint"
+            class="card__image filter-opacity"
             src="./images/Begining.jpg"
             alt="Мужчина поднимается на высокую гору по пологому подъему."
           />
@@ -115,6 +116,7 @@
                 height="36"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <g class="heart">
                   <path
@@ -148,9 +150,9 @@
       </article>
       <article class="card">
         <h2 class="card__title">1 спринт: А если не получится?</h2>
-        <div class="card__image-container fear-of-failure">
+        <div class="card__image-container bg-blueviolet">
           <img
-            class="card__image first-sprint"
+            class="card__image filter-opacity"
             src="./images/Begining.jpg"
             alt="Мужчина поднимается на высокую гору по пологому подъему."
           />
@@ -178,6 +180,7 @@
                 height="36"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <g class="heart">
                   <path
@@ -213,7 +216,7 @@
         <h2 class="card__title">2 спринт: Погоня за идеалом</h2>
         <div class="card__image-container">
           <img
-            class="card__image to-the-ideal"
+            class="card__image filter-sepia"
             src="./images/Nice.webp"
             alt="Мужчина поднимается на высокую гору по пологому подъему."
           />
@@ -242,6 +245,7 @@
                 height="36"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <g class="heart">
                   <path
@@ -277,7 +281,7 @@
         <h2 class="card__title">2 спринт: О тех, кто рядом</h2>
         <div class="card__image-container">
           <img
-            class="card__image friends"
+            class="card__image filter-grayscale"
             src="./images/By_the_fire.jpg"
             alt="Путники на привале у костра"
           />
@@ -305,6 +309,7 @@
                 height="36"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <g class="heart">
                   <path
@@ -340,7 +345,7 @@
         <h2 class="card__title">3 спринт: Обходные стратегии</h2>
         <div class="card__image-container">
           <img
-            class="card__image workaround-strategy"
+            class="card__image filter-contrast"
             src="./images/Height.jpg"
             alt="Мужчина карабкается по отвесной скале."
           />
@@ -366,6 +371,7 @@
                 height="36"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <g class="heart">
                   <path
@@ -399,9 +405,9 @@
       </article>
       <article class="card">
         <h2 class="card__title">3 спринт: Когда опускаются руки</h2>
-        <div class="card__image-container container-hands-drop">
+        <div class="card__image-container bg-darkblue">
           <img
-            class="card__image hands-drop"
+            class="card__image filter-invert filter-opacity"
             src="./images/To_be_continied.jpg"
             alt="Мужчина карабкается по отвесной скале."
           />
@@ -433,6 +439,7 @@
                 height="36"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <g class="heart">
                   <path
@@ -497,6 +504,7 @@
                 height="36"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
+                aria-hidden="true"
               >
                 <g class="heart">
                   <path
@@ -531,10 +539,10 @@
     </main>
 
     <dialog class="save-dialog" id="dialog-id">
-      <svg class="save-dialog__floppy" viewBox="0 0 40 40">
+      <svg class="save-dialog__floppy" viewBox="0 0 40 40" aria-hidden="true">
         <use href="./svg/floppy.svg#floppy"></use>
       </svg>
-      <span class="save-dialog__text">Вставьте дискету, чтобы продолжить</span>
+      <p class="save-dialog__text">Вставьте дискету, чтобы продолжить</p>
       <button
         class="save-dialog__button"
         type="button"
@@ -550,7 +558,7 @@
       onclick="window['dialog-id'].showModal()"
       aria-controls="dialog-id"
     >
-      <svg class="save-button__icon" viewBox="0 0 40 40">
+      <svg class="save-button__icon" viewBox="0 0 40 40" aria-hidden="true">
         <use href="./svg/floppy.svg#floppy"></use>
       </svg>
       <span class="save-button__title">Сохранить на память</span>
