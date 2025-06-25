@@ -13,7 +13,11 @@
   font-family: var(--base-font, sans-serif);
   font-size: 18px;
   background-color: #fff;
-  background-image: repeating-linear-gradient(-90deg, #d3d3d3 0 2px, transparent 2px 4px),
+  background-image: repeating-linear-gradient(
+      -90deg,
+      #d3d3d3 0 2px,
+      transparent 2px 4px
+    ),
     repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
     linear-gradient(#e7e7e7 0, #1a1a1a 100%);
   background-attachment: fixed;
@@ -53,9 +57,9 @@
   display: grid;
   gap: 50px;
   margin: 0 auto;
+  line-height: 21px;
   background-color: transparent;
   inline-size: var(--width);
-  line-height: 21px;
 }
 
 .card {
@@ -180,7 +184,7 @@
 }
 
 .card__icon-button:focus-visible {
-  border: 2px solid #000;
+  border: var(--border);
 }
 
 .card__icon-button:focus {
@@ -196,7 +200,8 @@
 
 .card__like-button {
   margin-inline-start: 2px;
-  padding-block: 3px;
+  padding-block-start: 3px;
+  padding-block-end: 2px;
   line-height: 29px;
   cursor: pointer;
   inline-size: 130px;
@@ -212,11 +217,11 @@
 
 .button-effect {
   position: relative;
+  border: var(--border);
   overflow: hidden;
   color: #fff;
   background-color: #fff;
   transition: box-shadow 0.3s ease;
-  border: var(--border); 
 }
 
 .button-effect:focus {
@@ -277,15 +282,15 @@
   align-items: center;
   row-gap: 30px;
   column-gap: 20px;
-  inline-size: 353px;
   border: var(--border);
-  padding-block: 29px;
   padding-inline: 0;
+  padding-block: 29px;
+  overflow-x: hidden;
   font-family: var(--accented-font, fantasy);
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
-  overflow-x: hidden;
+  inline-size: 353px;
 }
 
 .save-dialog::backdrop {
@@ -302,8 +307,8 @@
 
 .save-dialog__button {
   grid-area: button;
-  block-size: 38px;
   border: var(--border);
+  block-size: 38px;
 }
 
 /*Медиавыражения для адаптации под мобильную версию*/
@@ -324,7 +329,7 @@
   }
 
   .save-dialog[open] {
-    inline-size: 341px;
     grid-template-columns: 39px 198px;
+    inline-size: 341px;
   }
 }
