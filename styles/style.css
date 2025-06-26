@@ -172,14 +172,16 @@
 }
 
 .card__icon-button {
-  border: 1px solid transparent;
+  display: inline-grid;
+  place-content: center;
+  border: 2px solid transparent;
   padding: 0;
   vertical-align: top;
   line-height: 0;
   background-color: #fff;
   transition: border 0.3s ease;
   cursor: pointer;
-  max-inline-size: 41px;
+  max-inline-size: 38px;
   max-block-size: 38px;
 }
 
@@ -271,26 +273,26 @@
   mix-blend-mode: difference;
 }
 
-.save-dialog[open] {
-  display: grid;
-  grid-template-columns: 39px 234px;
-  grid-template-rows: min-content min-content;
-  grid-template-areas:
-    "floppy text"
-    "button button";
-  justify-content: center;
-  align-items: center;
-  row-gap: 30px;
-  column-gap: 20px;
+.save-dialog {
   border: var(--border);
-  padding-inline: 0;
-  padding-block: 29px;
-  /*overflow-x: hidden; */
+  padding: 29px 30px;
   font-family: var(--accented-font, fantasy);
   font-size: 14px;
   line-height: 150%;
   text-transform: uppercase;
-  inline-size: 353px;
+  max-inline-size: 353px;
+}
+
+.save-dialog[open] {
+  display: grid;
+  grid-template-columns: 39px 1fr;
+  grid-template-rows: min-content min-content;
+  grid-template-areas:
+    "floppy text"
+    "button button";
+  align-items: center;
+  row-gap: 30px;
+  column-gap: 20px;
 }
 
 .save-dialog::backdrop {
@@ -308,8 +310,8 @@
 .save-dialog__button {
   grid-area: button;
   border: var(--border);
-  block-size: 38px;
   background-color: #fff;
+  block-size: 38px;
 }
 
 /*Медиавыражения для адаптации под мобильную версию*/
@@ -329,8 +331,8 @@
     inline-size: 28px;
   }
 
-  .save-dialog[open] {
-    grid-template-columns: 39px 198px;
-    inline-size: 341px;
+  .save-dialog {
+    padding: 29px 40px;
+    max-inline-size: 341px;
   }
 }
