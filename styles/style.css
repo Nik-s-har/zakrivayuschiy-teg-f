@@ -285,7 +285,7 @@
   border: var(--border);
   padding-inline: 0;
   padding-block: 29px;
-  overflow-x: hidden;
+  /*overflow-x: hidden; */
   font-family: var(--accented-font, fantasy);
   font-size: 14px;
   line-height: 150%;
@@ -309,6 +309,7 @@
   grid-area: button;
   border: var(--border);
   block-size: 38px;
+  background-color: #fff;
 }
 
 /*Медиавыражения для адаптации под мобильную версию*/
